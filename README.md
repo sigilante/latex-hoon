@@ -1,6 +1,6 @@
 # latex-hoon
 
-Hoon definition for the LaTeX listings package.
+Hoon definition for the LaTeX `listings` syntax highlighter and code formatting package.
 
 ```sh
 pdflatex example.tex
