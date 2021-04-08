@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+
+\lstdefinelanguage{Hoon}
+{
+  alsoletter={
+    ~!@\#\$\%^&*-_=+:;<>\,.?/|`"'\\
+  },
+  keywords={
+    |_, |\%, |@, |:, |., |-, |^, |~, |*, |=, |?, |\$,
+    \$@, \$_, \$:, \$\%, \$<, \$>, \$|, \$\&, \$^, \$~, \$-, \$=, \$?, \$;,
+    \%_, \%., \%^, \%+, \%-, \%:, \%~, \%*, \%=,
+    :_, :^, :+, :-, :~, :*,
+    .+, .*, .=, .?, .^,
+    --, ==,
+    ^|, ^., ^-, ^+, ^\&, ^~, ^=, ^?, ^*, ^:,
+    ~|, ~\$, ~_, ~\%, ~/, ~<, ~>, ~+, ~\&, ~?, ~=, ~!,
+    ;:, ;/, ;<, ;~, ;;, ;+, ;*, ;=,
+    =|, =., =?, =^, =:, =/, =;, =<, =>, =-, =*, =\,, =+, =~,
+    ?|, ?:, ?., ?<, ?>, ?-, ?^, ?=, ?\#, ?+, ?\&, ?@, ?~, ?!,
+    !:, !., !\,, !;, !>, !<, !@, !=, !?, !!,
+    /?, /-, /+, /=, /\%, /\$, /*,
+    +|, +\$, ++, +*,
+  },
+  morekeywords={
+    @, @c, @d, @da, @dr, @f, @i, @if, @is, @n, @p, @q, @r, @rh, @rs, @rd, @rq, @s, @sb, @sd, @sv, @sw, @sx, @t, @ta, @tas, @u, @ub, @uc, @ud, @uv, @uw, @ux
+    unit, cord, arch, tape, list, map, set
+  },
+  sensitive=true,
+  morecomment=[l]{::},
+  morestring=[b]",
+  morestring=[d]'
+}
+
+\lstset{
+    language=Hoon,
+    basicstyle=\small\ttfamily,
+    numbers=left, numberstyle=\tiny, stepnumber=5, firstnumber=1, numberfirstline=false,
+    frame=tb,
+    tabsize=2,
+    columns=fixed,
+    showstringspaces=false,
+    showtabs=false,
+    keepspaces,
+    upquote=true,
+    commentstyle=\color{Gray}\emph,
+    keywordstyle=\color{Orange}\bfseries
+}
+
+\begin{document}
+
+\begin{lstlisting}
+::    Zeroes
+++  zeros
+  ~/  %zeros
+  |=  n=@ud  ^-  @lvs
+  ~_  leaf+"lagoon-fail"
+  `@lvs`(lsh [5 n] 1)   :: pin at head for leading zeros
+\end{lstlisting}
+
+\end{document}
